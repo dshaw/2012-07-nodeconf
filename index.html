@@ -33,206 +33,200 @@
 			<div class="state-background"></div>
 			
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+      <div class="slides">
 
-          <!-- Title slide -->
-          <section>
-              <h1>More Realtime</h1>
-              <p class="intro">
-                  <img class=avatar src="./assets/angry_unicorn.png">
-              </p>
-              <h3 class="inverted">@dshaw</h3>
-              <script>
-                  // Delicously hacky. Look away.
-                  if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
-              </script>
-          </section>
+      <!-- Title slide -->
+      <section>
+        <section>
+          <h1>More Realtime</h1>
 
-          <!-- Node.js -->
-          <section>
-              <p>
-                  <img src="./assets/node-logo.png" style="padding: 4em">
-              </p>
-          </section>
+          <p class="intro">
+            <img class=avatar src="./assets/angry_unicorn.png">
+          </p>
 
-          <!-- Where have we come from in realtime. -->
-          <section>
-              <section>
-                  <h2>Cool Story.</h2>
+          <h3 class="inverted">@dshaw</h3>
+          <script>
+            // Delicously hacky. Look away.
+            if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) document.write('<p style="color: rgba(0,0,0,0.3); text-shadow: none;">(' + 'Tap to navigate' + ')</p>');
+          </script>
+        </section>
+        <section>
+          <h1>MOAR Realtime!</h1>
 
-                  <br>
+          <p class="intro">
+            <img class=avatar src="./assets/angry_unicorn.png">
+          </p>
 
-                  <h3>Bro</h3>
-              </section>
-              <section>
-                  <h2>Realime</h2>
+          <h3 class="inverted">@dshaw</h3>
+        </section>
+        <section>
+          <h1>More Socket.io</h1>
 
-                  <h3>Java</h3>
-              </section>
-              <section>
-                  <h2>Java?</h2>
+          <p class="intro">
+            <img class=avatar src="./assets/angry_unicorn.png">
+          </p>
 
-                  <p>Yes, you can do Java. Java can do realtime. You *can* do websockets in Java.</p>
-              </section>
-              <section>
-                  <h2>Java Websockets</h2>
+          <h3 class="inverted">@dshaw</h3>
+        </section>
+        <section>
+          <h1>Way More Redis!</h1>
 
-                  <code>
-                      static main () JAVA
-                  </code>
-              </section>
-          </section>
+          <p class="intro">
+            <img class=avatar src="./assets/angry_unicorn.png">
+          </p>
 
-          <!-- Realtime in Node.js - Early day -->
-          <section>
-              <section>
-                  <h2>WebSocket Server</h2>
+          <h3 class="inverted">@dshaw</h3>
+        </section>
+      </section>
 
-                  <p>@miksago</p>
-                  <p>Websockets were dirt simple</p>
-                  <p>Until they weren't.</p>
-                  <p>Chrome X - Hixie 72</p>
-              </section>
-              <section>
-                  <h2>WebSockets were easy</h2>
+      <!-- 3 Things -->
+      <section>
+        <h1>3 Things</h1>
 
-                  <p>20 lines of code and your were up and running.</p>
-              </section>
-          </section>
+        <ol>
+          <li>RedisStore Docs</li>
+          <li>Socket.io-Announce</li>
+          <li class="fragment">?</li>
+        </ol>
+      </section>
 
+      <!-- RedisStore Docs -->
+      <section>
+        <section>
+          <h2>RedisStore</h2>
 
-          <!-- Reality check: IE and older browsers -->
-          <section>
-              <section>
-                  <h2>IE</h2>
+          <p><img src="./assets/redis-small.png" style="padding: 4em"></p>
 
-                  <p>OMFG, Internet Explorer</p>
-              </section>
-              <section>
-                  <h2>But wait...</h2>
+          <p>That's awesome.</p>
+        </section>
+        <section>
+          <h2>You know what's cooler than one process (or even one cluster of processes)</h2>
 
-                  <p>Mozilla Firefox 3.5 also was terrible.</p>
-              </section>
-              <section>
-                  <h2>Cool story, bro.</h2>
+          <p>A cluster of servers.</p>
+        </section>
+        <section>
+          <h2>RedisStore</h2>
 
-                  <p>Websockets are fun, but you need to face reality.</p>
-              </section>
-          </section>
+          <ul>
+            <li>Lightweight key/value persistence in Redis.</li>
+            <li>Inter-process dispatch.</li>
+          </ul>
 
-          <!-- Socket.io -->
-          <section>
-              <h2>Socket.io</h2>
-              <p>Even better.</p>
-              <p>Abstraction around websockets which made it compatible with *the past*.</p>
-          </section>
+          <p>Cool. But how?</p>
+        </section>
+        <section>
+          <h2>RedisStore</h2>
 
-          <!-- Socket.io -->
-          <section>
-            <section>
-                <h2>You know what's cooler than one process (or one cluster of processes)</h2>
-                <p>A cluster of servers.</p>
-            </section>
-            <section>
-                <h2>Socket.io RedisStore</h2>
-                <p>REDIS</p>
-            </section>
-          </section>
+          <p>Cool. But how?</p>
 
-          <!-- Socket.io-announce -->
-          <section>
-            <section>
-                <h2>Network connected realtime services</h2>
-                <p>Now that you have network connectect realtime services, what can you do?</p>
-            </section>
-            <section>
-                <h2></h2>
-                <p></p>
-            </section>
-          </section>
+          <p><img src="./assets/deal_with_it.gif" style="padding: 4em"></p>
 
-          <!-- More Realtime: Mixture -->
-          <section>
-            <section>
-              <h2>Mixture</h2>
-              <p><a href="https://github.com/dshaw/mixture">github.com/dshaw/mixture</a></p>
+          <p>Up until today, <abbr title="your on your own">YOYO</abbr>!</p>
+        </section>
+
+        <section>
+          <h2>RedisStore Docs</h2>
+
+          <h3>http://github.com/dshaw/RedisStore-docs</h3>
+
+          <p><img src="./assets/thumbsup.png" style="padding: 2em"></p>
+        </section>
+
+        <section>
+          <h2>Socket.io RedisStore</h2>
+
+          <p>REDIS</p>
+        </section>
+      </section>
+
+      <!-- Socket.io-announce -->
+      <section>
+        <section>
+          <h2>Socket.io-Announce</h2>
+
+          <h3>Network connected realtime services</h3>
+
+          <p>Now that you have network connect realtime services in your infrastructure, what can you do?</p>
+        </section>
+        <section>
+          <h2>Traditional Socket.io</h2>
+
+          <p>Tied to the webserver.</p>
+
+          <p>This applies to the oldest school: Connect/Express.</p>
+
+          <p>As it does to the newest: Tako.</p>
+        </section>
+        <section>
+          <h2>Socket.io-Announce</h2>
+
+          <h3>Look ma, no server.</h3>
+
+          <p>Just drop in Announce and share data directly with your Socket.io connected users!</p>
+        </section>
+        <section>
+          <h2>Announce</h2>
               <pre><code contenteditable>
-var mix = require('../../').mix()
+                var announce = require('socket.io-announce').createClient()
+                  , symbols = 'THOO GOOF EXIT BOP SDD ALPP RIGM OPPL HPBG'.split(' ')
 
-var count = process.argv[2] || 4 // maxes out locally at ~82
-  , ioPort = 8880
-  , nodeId = 0
+                function dataStream () {
+                  var n = Math.round(Math.random()*5)
+                    , data = {
+                        id: (Math.abs(Math.random() * Math.random() * Date.now() | 0))
+                      , symbol: symbols[n]
+                      , price: (Math.random()*1000).toFixed(2)
+                      , n: n
+                      }
+                  announce.emit('quote', data)
+                }
 
-// announce data server
-mix.task('announce').fork('data.js')
-
-// socket.io instances
-var socketio = mix.task('socket.io', { filename: 'app.js' })
-
-for (var i = 0; i < count; i++) {
-  ioPort++;
-  nodeId++;
-
-  var worker = socketio.fork({ args: [ioPort, nodeId] })
-}
+                setInterval(dataStream, 800)
               </code></pre>
-            </section>
-            <section>
-              <h2>Mixture - announce</h2>
+        </section>
+        <section>
+          <h2>Elsewhere, Socket.io Server</h2>
               <pre><code contenteditable>
-var announce = require('socket.io-announce').createClient()
-  , symbols = 'THOO GOOF EXIT BOP SDD ALPP RIGM OPPL HPBG'.split(' ')
+                var path = require('path')
+                , connect = require('connect')
+                , sio = require('socket.io')
+                , RedisStore = sio.RedisStore
+                , app = connect.createServer(connect.static(path.join(__dirname, './')))
+                , settings = { store: new RedisStore({ nodeId: function () { return id } }) }
+                , io = sio.listen(app, settings);
 
-function dataStream () {
-  var n = Math.round(Math.random()*5)
-    , data = {
-        id: (Math.abs(Math.random() * Math.random() * Date.now() | 0))
-      , symbol: symbols[n]
-      , price: (Math.random()*1000).toFixed(2)
-      , n: n
-    }
-  announce.emit('quote', data)
-}
+                app.listen(port);
+              </code></pre>
+        </section>
+        <section>
+          <h2>Socket.io-Announce</h2>
 
-dataStream()
-setInterval(dataStream, 800)
-                </code></pre>
-            </section>
-            <section>
-              <h2>Mixture - Socket.io</h2>
-              <pre><code contenteditable>
-var express = require('express')
-  , sio = require('socket.io')
-  , RedisStore = sio.RedisStore
+          <p><img src="./assets/dancing_banana.gif" style="padding: 4em"></p>
 
-var port = process.argv[2] || 8880
-  , id = process.argv[3] || 0
-  , delay = process.argv[4] || 800
-  , app = express.createServer(express.static(__dirname + '/.'))
-  , io = sio.listen(app, { 'store', new RedisStore({ nodeId: function () { return id } }) })
+          <p>Insanely simple.</p>
+        </section>
+      </section>
 
-io.sockets.on('connection', function (socket) {
-  socket.on('purchase', function (data, fn) {
-    data.timestamp = Date.now()
-    setTimeout(function () { // without a delay the transition is imperceptible
-      socket.emit('confirm', data)
-      socket.broadcast.emit('activity', data)
-    }, delay)
-})
+      <!-- 3 Things - REVEAL -->
+      <section>
+        <h2>3 Things</h2>
 
-app.listen(port)
-                </code></pre>
-            </section>
-          </section>
+        <ol>
+          <li>RedisStore Docs</li>
+          <li>Socket.io-Announce</li>
+          <li class="fragment">Redis Monitor</li>
+        </ol>
+      </section>
 
-          <section>
-              <h1>Thank you!</h1>
-              <h3 class="inverted">@dshaw</h3>
+      <section>
+        <h1>Thank you!</h1>
 
-              <p>More at: <a href="http://github.com/dshaw">github.com/dshaw</a></p>
-          </section>
+        <h3 class="inverted">@dshaw</h3>
 
-			</div>
+        <p>More at: <a href="http://github.com/dshaw">github.com/dshaw</a></p>
+      </section>
+
+      </div>
 
 			<!-- The navigational controls UI -->
 			<aside class="controls">
