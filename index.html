@@ -22,6 +22,16 @@
       #reveal section img.noborder {
         border: 0px
       }
+      #reveal h1, #reveal h2, #reveal h3, #reveal h4 {
+        margin-top: 40px
+      }
+      .thelist {
+        font-size: 1.6em;
+        line-height: 1.6em;
+      }
+      .lilpad {
+        padding: 2em;
+      }
     </style>
 	</head>
 	
@@ -83,7 +93,7 @@
       <section>
         <h1>3 Things</h1>
 
-        <ol>
+        <ol class="thelist">
           <li>RedisStore Docs</li>
           <li>Socket.io-Announce</li>
           <li class="fragment">?</li>
@@ -93,33 +103,49 @@
       <!-- RedisStore Docs -->
       <section>
         <section>
-          <h2>RedisStore</h2>
+          <h2>Socket.io RedisStore</h2>
 
-          <p><img src="./assets/redis-small.png" style="padding: 4em"></p>
+          <p><img src="./assets/redis.png" class="lilpad"></p>
 
           <p>That's awesome.</p>
         </section>
         <section>
-          <h2>You know what's cooler than one process (or even one cluster of processes)</h2>
+          <h2>Socket.io RedisStore</h2>
+
+          <h3>You know what's cooler than one process<br>
+              (or even a cluster of processes)?</h3>
 
           <p>A cluster of servers.</p>
         </section>
         <section>
-          <h2>RedisStore</h2>
+          <h2>Socket.io RedisStore</h2>
 
           <ul>
-            <li>Lightweight key/value persistence in Redis.</li>
-            <li>Inter-process dispatch.</li>
+            <li>
+              <p>Lightweight key/value persistence in Redis.</p>
+              <pre><code>
+io.sockets.on('connection', function(socket) {
+  var nick = 'dshaw'
+  socket.set('nickname', nick, function() {
+    socket.emit('nickname', nick)
+  })
+})
+              </code></pre>
+            </li>
+            <li>
+              <p>Inter-process dispatch.</p>
+              <pre><code>
+    io.sockets.emit('newuser', { nick: nick });
+              </code></pre>
+            </li>
           </ul>
-
-          <p>Cool. But how?</p>
         </section>
         <section>
-          <h2>RedisStore</h2>
+          <h2>Socket.io RedisStore</h2>
 
           <p>Cool. But how?</p>
 
-          <p><img src="./assets/deal_with_it.gif" style="padding: 4em"></p>
+          <p><img src="./assets/deal_with_it.gif" style="padding: 0 4em"></p>
 
           <p>Up until today, <abbr title="your on your own">YOYO</abbr>!</p>
         </section>
@@ -127,15 +153,11 @@
         <section>
           <h2>RedisStore Docs</h2>
 
-          <h3>http://github.com/dshaw/RedisStore-docs</h3>
+          <h3>
+            <a href="https://github.com/dshaw/RedisStore-Docs">github.com/dshaw/RedisStore-Docs</a>
+          </h3>
 
-          <p><img src="./assets/thumbsup.png" style="padding: 2em"></p>
-        </section>
-
-        <section>
-          <h2>Socket.io RedisStore</h2>
-
-          <p>REDIS</p>
+          <p><img src="./assets/thumbsup.png" style="width: 300px"></p>
         </section>
       </section>
 
@@ -146,62 +168,93 @@
 
           <h3>Network connected realtime services</h3>
 
-          <p>Now that you have network connect realtime services in your infrastructure, what can you do?</p>
+          <!--<p>Now that you have network connected realtime services in your infrastructure, what can you do?</p>-->
+
+          <p><img src="./assets/socketioannounce.png" style="width: 40%; background-color: #EEE; background: rgba(0, 0, 0, 0.1);"></p>
         </section>
         <section>
           <h2>Traditional Socket.io</h2>
 
-          <p>Tied to the webserver.</p>
+          <h3>Tied to a web server</h3>
 
-          <p>This applies to the oldest school: Connect/Express.</p>
+          <p>Applies to the old school:<br>
+            Express + Socket.io</p>
 
-          <p>As it does to the newest: Tako.</p>
+          <p>As it does to the newest:<br>
+            Tako</p>
         </section>
         <section>
           <h2>Socket.io-Announce</h2>
 
-          <h3>Look ma, no server.</h3>
+          <h3>Look ma, no server</h3>
 
-          <p>Just drop in Announce and share data directly with your Socket.io connected users!</p>
+          <p>Just drop in Announce and broadcast data<br>
+              directly with your Socket.io connected users!</p>
         </section>
         <section>
-          <h2>Announce</h2>
-              <pre><code contenteditable>
-                var announce = require('socket.io-announce').createClient()
-                  , symbols = 'THOO GOOF EXIT BOP SDD ALPP RIGM OPPL HPBG'.split(' ')
+          <h2>Socket.io-Announce</h2>
+              <pre><code>
+var announce = require('socket.io-announce').createClient()
+  , symbols = 'THOO GOOF EXIT BOP SDD ALPP RIGM OPPL HPBG'.split(' ')
 
-                function dataStream () {
-                  var n = Math.round(Math.random()*5)
-                    , data = {
-                        id: (Math.abs(Math.random() * Math.random() * Date.now() | 0))
-                      , symbol: symbols[n]
-                      , price: (Math.random()*1000).toFixed(2)
-                      , n: n
-                      }
-                  announce.emit('quote', data)
-                }
+function dataStream () {
+  var n = Math.round(Math.random()*8)
+    , data = {
+        id: (Math.abs(Math.random() * Math.random() * Date.now() | 0))
+      , symbol: symbols[n]
+      , price: (Math.random()*1000).toFixed(2)
+      , n: n
+      }
+  announce.emit('quote', data)
+}
 
-                setInterval(dataStream, 800)
+setInterval(dataStream, 800)
               </code></pre>
         </section>
         <section>
           <h2>Elsewhere, Socket.io Server</h2>
-              <pre><code contenteditable>
-                var path = require('path')
-                , connect = require('connect')
-                , sio = require('socket.io')
-                , RedisStore = sio.RedisStore
-                , app = connect.createServer(connect.static(path.join(__dirname, './')))
-                , settings = { store: new RedisStore({ nodeId: function () { return id } }) }
-                , io = sio.listen(app, settings);
+              <pre><code>
+var sio = require('socket.io')
+  , RedisStore = sio.RedisStore
+  , app = connect.createServer(connect.static(path.join(__dirname, './')))
+  , settings = { store: new RedisStore({
+                  nodeId: function () { return 'socketio-1' }
+                }) }
+  , io = sio.listen(app, settings);
 
-                app.listen(port);
+  app.listen(port);
               </code></pre>
+        </section>
+        <section>
+          <h2>Socket.io Client-side</h2>
+          <pre><code>
+&lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  var socket = io.connect()
+
+  socket.on('quote', function (data) {
+    $('&lt;span/&gt;', {
+        id: data.id,
+        html: data.symbol + ' : ' + data.price }).appendTo('#ticker')
+
+    // if the last digit of the prices matches the id, buy.
+    var m = ((data.price).match(/[-+]?([0-9]*([0-9]))?\.[0-9]+/))
+        , watch = m && m[2];
+
+    if (nodeId && watch == nodeId) {
+      $('#'+data.id).addClass('reserved')
+      data.buyer = nodeId
+      data.quantity = Math.round(Math.random()*5)*5
+      socket.emit('purchase', data)
+    }
+  });
+&lt;/script&gt;
+          </code></pre>
         </section>
         <section>
           <h2>Socket.io-Announce</h2>
 
-          <p><img src="./assets/dancing_banana.gif" style="padding: 4em"></p>
+          <h3><a href="https://github.com/dshaw/socket.io-announce">github.com/dshaw/socket.io-announce</a></h3>
 
           <p>Insanely simple.</p>
         </section>
@@ -209,13 +262,90 @@
 
       <!-- 3 Things - REVEAL -->
       <section>
-        <h2>3 Things</h2>
+        <h1>3 Things</h1>
 
-        <ol>
+        <ol class="thelist">
           <li>RedisStore Docs</li>
           <li>Socket.io-Announce</li>
           <li class="fragment">Redis Monitor</li>
         </ol>
+      </section>
+
+      <!-- Redis Monitor -->
+      <section>
+        <section>
+          <h2>Redis is Awesome</h2>
+
+          <p><img src="./assets/redis-small.png" style="padding: 2em"></p>
+
+          <p>You know that.</p>
+        </section>
+        <section>
+          <h2>RedisLive</h2>
+
+          <p>Monitoring with MONITOR is bad.</p>
+
+          <p>The MONITOR command is good and useful for debugging, but not monitoring.</p>
+
+          <h3><a href="http://redis.io/commands/monitor">redis.io/commands/monitor</a></h3>
+        </section>
+        <section>
+          <h2>Redis Monitor</h2>
+
+          <p>Monitor a single Redis or a cluster of Redis servers.</p>
+
+          <p>Now visualize what's going on on those servers.</p>
+
+          <p><img src="./assets/redis-monitor-screenshot.png" style="width: 60%"></p>
+        </section>
+        <section>
+          <h2>Redis Monitor</h2>
+
+          <h3>Use All The Things</h3>
+
+          <ol>
+            <li>Socket.io RedisStore</li>
+            <li>Socket.io-Announce</li>
+          </ol>
+        </section>
+        <section>
+          <h2>Redis Monitor</h2>
+
+          <h3><a href="https://github.com/dshaw/redis-monitor">github.com/dshaw/redis-monitor</a></h3>
+
+          <h3>Demo time!</h3>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1>One More Thing</h1>
+
+          <p><img src="./assets/jobs.jpg" class="lilpad"></p>
+        </section>
+        <section>
+          <h1>More, More Realtime</h1>
+
+          <ul>
+            <li>
+              <b>Socket.io-Zero</b><br>
+              ZeroMQ dispatch and Redis k/v<br>
+              <a href="https://github.com/dshaw/socket.io-zero">github.com/dshaw/socket.io-zero</a>
+              <br>
+              <br>
+            </li>
+            <li>
+              <b>Socket.io-Mongo</b><br>
+              MongoDB store with Mubsub dispatch<br>
+              <a href="https://github.com/kof/socket.io-mongo">github.com/kof/socket.io-mongo</a>
+            </li>
+            <!--<li>-->
+              <!--<b>Mubsub</b><br>-->
+              <!--Pub/sub for Node.js and MongoDB<br>-->
+              <!--<a href="https://github.com/scttnlsn/mubsub">github.com/scttnlsn/mubsub</a>-->
+            <!--</li>-->
+          </ul>
+        </section>
       </section>
 
       <section>
