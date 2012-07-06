@@ -1,0 +1,21 @@
+{
+  "name": "dshaw-talk-2012-07-nodeconf",
+  "version": "1.0.0",
+  "description": "More Realtime",
+  "keywords": [
+    "node.js",
+    "nodeconf",
+    "realtime",
+    "socket.io"
+  ],
+  "author": "Daniel D. Shaw <dshaw@dshaw.com> (http://dshaw.com)",
+  "dependencies": {
+    "express": "~2.5.9",
+    "optimist": "~0.3.4",
+    "redis": "~0.7.2"
+  },
+  "main": "app",
+  "engines": {
+    "node": ">= 0.6.0"
+  }
+}
