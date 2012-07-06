@@ -1,6 +1,6 @@
 {
   "name": "dshaw-talk-2012-07-nodeconf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "More Realtime",
   "keywords": [
     "node.js",
@@ -9,13 +9,21 @@
     "socket.io"
   ],
   "author": "Daniel D. Shaw <dshaw@dshaw.com> (http://dshaw.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dshaw/2012-07-nodeconf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dshaw/2012-07-nodeconf/issues"
+  },
+  "license": "MIT",
+  "main": "./server.js",
   "dependencies": {
     "express": "~2.5.9",
     "optimist": "~0.3.4",
     "redis": "~0.7.2"
   },
-  "main": "./server.js",
   "engines": {
-    "node": ">= 0.6.0"
+    "node": "*"
   }
 }
