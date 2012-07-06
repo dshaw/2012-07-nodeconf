@@ -10,7 +10,7 @@ I spoke about some of the work I've done scaling Socket.io with Redis and introd
 
 ## Online Slides
 
-http://dshaw.github.com/2012-05-jsday
+http://dshaw.github.com/2012-07-nodeconf
 
 ## View Locally
 
