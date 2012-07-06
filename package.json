@@ -14,7 +14,7 @@
     "optimist": "~0.3.4",
     "redis": "~0.7.2"
   },
-  "main": "app",
+  "main": "./server.js",
   "engines": {
     "node": ">= 0.6.0"
   }
