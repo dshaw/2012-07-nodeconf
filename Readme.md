@@ -10,13 +10,13 @@ I spoke about some of the work I've done scaling Socket.io with Redis and introd
 
 ## Online Slides
 
-http://dshaw.github.com/dshaw-talk-2012-07-nodeconf
+http://dshaw.github.com/2012-05-jsday
 
 ## View Locally
 
 You can view the slides by dropping `index.html` in your browser or by running:
 
-	$ npm install
+    $ npm install
     $ npm start
 
 ...and going to http://localhost:8888
