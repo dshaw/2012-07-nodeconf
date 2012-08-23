@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/dshaw/2012-07-nodeconf.png)](http://travis-ci.org/dshaw/2012-07-nodeconf)
 # More Realtime
 
 Here are my slides from my talk at the NodeConf 2012.
